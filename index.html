@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CodeWithAmir | Full Stack Web Developer & UI/UX Designer</title>
+
+    <meta name="description"
+        content="Hi, I'm Amir, a creative Full Stack Web Developer specializing in custom, animated, and high-performance websites. See my portfolio and contact me for projects.">
+
+    <meta name="keywords"
+        content="Amir Web Developer, Full Stack Developer Pakistan, Lahore UI/UX Designer, CodeWithAmir, Custom Website Developer, Freelancer">
+
+    <meta property="og:title" content="CodeWithAmir | Digital Portfolio">
+    <meta property="og:description" content="Check out my animated, professional digital portfolio.">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./CodeWithAmir-favicone.png" type="image/x-icon">
+</head>
+
+<body>
+    <canvas id="smokeCanvas"></canvas>
+
+    <canvas id="rainCanvas"></canvas>
+
+    <div id="preloader">
+        <div class="loader-content">
+            <h1 class="loader-logo">CodeWith<span>Amir</span></h1>
+            <div class="progress-container">
+                <div class="progress-bar" id="progress"></div>
+            </div>
+            <p id="loader-status">Initializing Systems...</p>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">CodeWith<span>Amir</span></div>
+
+        <div class="menu-icon" id="menuIcon" onclick="toggleMenu()">
+            <div class="bar bar1"></div>
+            <div class="bar bar2"></div>
+            <div class="bar bar3"></div>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="./index.html" onclick="toggleMenu()" class="nav-link">Home</a></li>
+            <li><a href="#About" onclick="toggleMenu()">About</a></li>
+            <li><a href="#Skills" onclick="toggleMenu()">Skills</a></li>
+            <li><a href="#Projects" onclick="toggleMenu()">Projects</a></li>
+            <li><a href="#Contact" onclick="toggleMenu()">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="section-hero">
+        <div class="hero-content">
+            <h2 class="fade-in">Hi, I am</h2>
+            <h1 class="main-name">Amir <span>Raza</span></h1>
+            <p class="tagline">Full-Stack Developer & UI/UX Designer.
+                <span>Building smart applications and modern web experiences.</span>
+            </p>
+            <h2 class="hero-tagline">I am a <span class="typing" id="typing-text"></span><span
+                    class="cursor">&nbsp;</span></h2>
+        </div>
+        <div class="hero-btn">
+            <a href="#Projects" class="btn primary">View Work</a>
+            <a href="#Contact" class="btn secondry">Contact Me</a>
+        </div>
+    </section>
+
+    <section id="About" class="About-section">
+
+        <div class="about-card">
+            <h2 class="section-title">About <span>Me</span></h2>
+            <div class="About-content">
+                <p>
+                    I am a 10th-grade student and a passionate <strong>Full-Stack Developer</strong> from Pakistan.
+                    My journey in tech is inspired by my late grandfather, a master mechanic, from whom I learned the
+                    value
+                    of precision and hard work.
+                </p>
+
+            </div>
+
+            <div class="about-stats">
+                <div class="stat">
+                    <h3>2+</h3>
+                    <p>Years Codding</p>
+                </div>
+
+                <div class="stat">
+                    <h3>5+</h3>
+                    <p>Projects</p>
+                </div>
+
+                <div class="stat">
+                    <h3>30+</h3>
+                    <p>Subscribers</p>
+                </div>
+            </div>
+    </section>
+
+    <section id="Skills" class="Skills-section">
+
+        <div class="skill-card">
+            <h2 class="section-title">My <span>Skills</span></h2>
+
+            <div class="skills-container">
+                <div class="skills-group">
+                    <h3>Development</h3>
+                    <div class="skills-tags">
+                        <span>HTML5</span>
+                        <span>CSS 3</span>
+                        <span>JavaScript ES6</span>
+                        <span>React</span>
+                        <span>Next.js</span>
+                        <span>Talwind css</span>
+                        <span>Bootstrap</span>
+                        <span>MongoDB</span>
+                        <span>SQL</span>
+                    </div>
+
+                    <div class="skills-group">
+                        <h3>Designing & Tools</h3>
+                        <div class="skills-tags">
+                            <span>UI/UX Design</span>
+                            <span>Adobe illustater</span>
+                            <span>Photoshop</span>
+                            <span>CoralDRAW</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section id="Projects" class="Projects-section">
+        <h2 class="section-title">My <span>Work</span></h2>
+
+        <div class="project-scroll-container">
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Digital Clock</h3>
+                    <p>Real-time JS Clock with dark theme</p>
+                    <div class="skills-tag"><span>HTML5</span> <span>CSS3</span> <span>JS</span></div>
+                </div>
+                <div class="project-card">
+                    <h3>calculator</h3>
+                    <p>Glassmorphism functional calculator.</p>
+                    <div class="skills-tag"><span>HTML5</span> <span>CSS3</span> <span>JS</span></div>
+                </div>
+                <div class="project-card">
+                    <h3>Graphic Design</h3>
+                    <p>5-Star rated Freelancer contests.</p>
+                    <div class="skills-tag"> <span>AI</span> <span>PS</span></div>
+                </div>
+                <div class="project-card">
+                    <h3>Best Page Onload</h3>
+                    <p>Start Rocket and load the website</p>
+                    <div class="skills-tag"><span> HTML5 </span> <span> CSS3 </span> <span> JS </span></div>
+                </div>
+                <div class="project-card">
+                    <h3>Portfolio Website</h3>
+                    <p>Animated Portfolio Web App</p>
+                    <div class="skills-tag"> <span>HTML5</span> <span>CSS3</span> <span>JS</span></div>
+                </div>ٖ
+            </div>
+        </div>
+
+        <div class="project-footer">
+            <a href="#Contact" class="btn contact-btn">Contect Me</a>
+        </div>
+    </section>
+
+    <section id="Contact" class="contact-section">
+        <div class="contact-card">
+            <h2 class="section-title">Get in <span>Touch</span></h2>
+            <form action="https://formsubmit.co/amirraza6596695@gmail.com" method="POST" id="my-contact-form"
+                class="contact-form">
+                <div class="input-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="hidden" name="_captcha" value="false">
+                </div>
+
+                <input type="text" name="subject" placeholder="Subject" class="subject-input">
+                <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+
+                <button type="submit" class="btn send-btn" id="submit-btn">Send Message</button>
+            </form>
+
+            <div class="social-links">
+                <p>Or Find me on:</p>
+                <div class="links">
+                    <a href="https://www.instagram.com/amirraza3946/" target="_blank">instagram</a>
+                    <a href="https://github.com/amirraza6596695-byte?tab=repositories" target="_blank">GitHub</a>
+                    <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank">Email</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 <span>CodeWithAmir</span> | All Right Reserved</p>
+
+            <div class="footer-social">
+                <a href="https://www.instagram.com/amirraza3946/" target="_blank">Instagram</a>
+                <a href="https://wa.me/923027117796" target="_blank">Whats App</a>
+                <a href="https:/www.github.com/amirraza6596695-byte?tab=repositories" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+
+</html>

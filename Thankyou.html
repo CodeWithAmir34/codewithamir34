@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success | CodeWithAmir</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #0d0d0d; /* Dark theme */
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .thank-you-card {
+            text-align: center;
+            padding: 50px;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            border-radius: 20px;
+            background: rgba(20, 20, 20, 0.8);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(138, 43, 226, 0.2);
+            max-width: 500px;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .icon {
+            font-size: 60px;
+            color: #8A2BE2; /* Your signature Purple */
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .back-home {
+            text-decoration: none;
+            color: #ffffff;
+            background: #8A2BE2;
+            padding: 12px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.3s all ease;
+            display: inline-block;
+            border: 1px solid #8A2BE2;
+        }
+
+        .back-home:hover {
+            background: transparent;
+            color: #8A2BE2;
+            box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="thank-you-card">
+        <div class="icon">✔</div>
+        <h1>Message Sent!</h1>
+        <p>Thank you for reaching out, Bro. Your message has been successfully received. I'll get back to you as soon as possible!</p>
+        <a href="index.html" class="back-home">Return Home</a>
+    </div>
+
+</body>
+</html>
