@@ -144,6 +144,57 @@ body {
     cursor: pointer;
 }
 
+.drowpdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Drowpdown content hidden Defult */
+
+.drowpdown-content {
+    display: none;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.9);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 8px;
+    list-style: none;
+    padding: 10px 0;
+}
+
+.drowpdown-content li a{
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.drowpdown-content li a:hover{
+    background-color: rgba(0, 212, 255, 0.2);
+    color: #ffcc00;
+}
+
+.drowpdown:hover .drowpdown-content {
+    display: block;
+}
+
+.nav-a{
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+.nav-d {
+    font-size: 12px;
+    transform: rotate(45deg);
+}
 /* Jab section active ho toh ye style apply hoga */
 .nav-links a.active {
     color: #8A2BE2;
