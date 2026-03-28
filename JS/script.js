@@ -225,7 +225,7 @@ if(contactForm) {
         })
         .then(response => {
             if (response.ok) {
-                window.location.href = "Thankyou.html"; 
+                window.location.href = "./Pages/Thankyou.html"; 
             } else {
                 alert("Something went wrong");
                 submitBtn.innerHTML = "Send Message";
@@ -238,4 +238,10 @@ if(contactForm) {
             submitBtn.innerHTML = "Send Message";
         });
     });
+}
+
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("../sw.js")
+    .then(() => console.log("Service Worker Registered"));
 }
