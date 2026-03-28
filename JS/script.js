@@ -239,8 +239,9 @@ if(contactForm) {
         });
     });
 }
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker
-    .register("/CodeWithAmir/sw.js")
-    .then(() => console.log("Service Worker Registered"));
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/PORTFOLIO/sw.js')
+    .then(() => console.log('SW Registered'))
+    .catch(err => console.log('SW Error', err));
 }
