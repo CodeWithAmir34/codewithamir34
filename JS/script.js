@@ -173,7 +173,7 @@ window.addEventListener('resize', () => {
 });
 
 // --- TYPEWRITER ---
-const roles = ["Web Developer", "UI/UX Designer", "Freelancer", "Graphic Designer"];
+const roles = ["Web App Developer", "UI/UX Designer", "Freelancer", "Graphic Designer"];
 let roleIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
