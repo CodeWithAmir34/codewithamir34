@@ -1,13 +1,16 @@
+const CACHE_NAME = "amir-portfolio-v1";
+const urlsToCache = [
+  "/CodeWithAmir/",
+  "/CodeWithAmir/index.html",
+  "/CodeWithAmir/css/style.css",
+  "/CodeWithAmir/js/script.js",
+  "/CodeWithAmir/assets/icon.png"
+];
+
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open("portfolio-cache").then((cache) => {
-      return cache.addAll([
-        "/",
-        "/index.html",
-        "/style.css",
-        "/script.js",
-        "/icon.png"
-      ]);
+    caches.open(CACHE_NAME).then((cache) => {
+      return cache.addAll(urlsToCache);
     })
   );
 });

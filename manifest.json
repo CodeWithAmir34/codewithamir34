@@ -1,13 +1,14 @@
 {
   "name": "Amir Portfolio",
   "short_name": "Portfolio",
-  "start_url": "/index.html",
+  "start_url": "/CodeWithAmir/",
+  "scope": "/CodeWithAmir/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#0f172a",
   "icons": [
     {
-      "src": "./Assets/CodeWithAmir-favicone.png",
+      "src": "/CodeWithAmir/Assets/favicone.png",
       "sizes": "192x192",
       "type": "image/png"
     }
