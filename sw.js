@@ -1,4 +1,4 @@
-const CACHE_NAME = "amir-portfolio-v1";
+const CACHE_NAME = "amir-portfolio-v2";
 const urlsToCache = [
   "/CodeWithAmir/",
   "/CodeWithAmir/index.html",
