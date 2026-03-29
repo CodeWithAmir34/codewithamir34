@@ -2,6 +2,7 @@
   "name": "CodeWithAmir",
   "short_name": "Amir",
   "start_url": "/PORTFOLIO/index.html",
+  "scope": "/PORTFOLIO/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#000000",
@@ -9,12 +10,14 @@
     {
       "src": "/PORTFOLIO/Assets/CodeWithAmir-favicone.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "/PORTFOLIO/Assets/CodeWithAmir-favicone.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     }
   ]
 }
