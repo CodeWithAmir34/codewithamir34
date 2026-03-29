@@ -225,7 +225,17 @@
         </div>
     </footer>
     <script src="./JS/script.js"></script>
+    <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+        .then(reg => console.log('Service Worker Registered'))
+        .catch(err => console.log('Service Worker Failed', err));
+    });
+  }
+</script>
     <script async="async" data-cfasync="false" src="https://pl29002477.profitablecpmratenetwork.com/d165a28beb6c2dc081f9f7d6a922f3e0/invoke.js"></script>
+
 </body>
 
 </html>
