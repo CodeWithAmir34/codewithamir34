@@ -2,9 +2,9 @@ const CACHE_NAME = "amir-portfolio-v2";
 const urlsToCache = [
   "/PORTFOLIO/",
   "/PORTFOLIO/index.html",
-  "/PORTFOLIO/css/style.css",
-  "/PORTFOLIO/js/script.js",
-  "/PORTFOLIO/Assets/icon.png"
+  "/PORTFOLIO/CSS/style.css",
+  "/PORTFOLIO/JS/script.js",
+  "/PORTFOLIO/Assets/CodwWithAmir-favicone.png"
 ];
 
 self.addEventListener("install", (event) => {
