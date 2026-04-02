@@ -28,7 +28,8 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1); /* Professional slide up */
+    transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1);
+    /* Professional slide up */
 }
 
 .loader-content {
@@ -44,7 +45,9 @@ body {
     text-transform: uppercase;
 }
 
-.loader-logo span { color: #8A2BE2; }
+.loader-logo span {
+    color: #8A2BE2;
+}
 
 .progress-container {
     width: 100%;
@@ -78,9 +81,12 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Smoke ke upar, content ke peeche */
-    pointer-events: none; /* Mouse elements par click kar sake */
-    display: none; /* Shoro mein hide rahe ga */
+    z-index: -1;
+    /* Smoke ke upar, content ke peeche */
+    pointer-events: none;
+    /* Mouse elements par click kar sake */
+    display: none;
+    /* Shoro mein hide rahe ga */
 }
 
 #smokeCanvas {
@@ -164,7 +170,7 @@ body {
     padding: 10px 0;
 }
 
-.drowpdown-content li a{
+.drowpdown-content li a {
     color: white;
     padding: 10px 20px;
     text-decoration: none;
@@ -173,7 +179,7 @@ body {
     transition: 0.3s;
 }
 
-.drowpdown-content li a:hover{
+.drowpdown-content li a:hover {
     background-color: rgba(0, 212, 255, 0.2);
     color: #ffcc00;
 }
@@ -182,7 +188,7 @@ body {
     display: block;
 }
 
-.nav-a{
+.nav-a {
     border: solid white;
     border-width: 0 2px 2px 0;
     display: inline-block;
@@ -305,21 +311,30 @@ body {
 }
 
 .typing {
-    color: #8A2BE2; /* Purple text for dynamic roles */
+    color: #8A2BE2;
+    /* Purple text for dynamic roles */
     font-weight: 700;
 }
 
 .cursor {
     display: inline-block;
     width: 3px;
-    background-color: #8A2BE2; /* Purple blinking cursor */
+    background-color: #8A2BE2;
+    /* Purple blinking cursor */
     margin-left: 2px;
     animation: blink 0.7s infinite;
 }
 
 @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
 }
 
 .btn {
@@ -460,7 +475,7 @@ section {
 
 
 .Projects-section {
-    height: 50vh;
+    height: 70vh;
     width: 80%;
     margin: 270px auto;
     background: rgba(131, 127, 127, 0.062);
@@ -604,7 +619,7 @@ section {
 
 .footer {
     width: 90%;
-    margin: 40px auto 20px auto;
+    margin: 50px auto 30px auto;
     padding: 20px 30px;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);

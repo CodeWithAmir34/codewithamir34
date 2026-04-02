@@ -96,7 +96,7 @@ window.addEventListener('load', () => {
     const preloaderInterval = setInterval(() => {
         if (width >= 100) {
             clearInterval(preloaderInterval);
-            status.innerText = "Welcome, Bro!";
+            status.innerText = "Welcome";
             setTimeout(() => {
                 preloader.style.transform = "translateY(-100%)"; 
                 setTimeout(() => {
