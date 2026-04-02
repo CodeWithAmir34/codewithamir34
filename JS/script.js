@@ -113,7 +113,7 @@ window.addEventListener('load', () => {
                 msgIndex++;
             }
         }
-    }, 200);
+    }, 100);
 });
 
 function startRainEffect() {
@@ -225,7 +225,7 @@ if(contactForm) {
         })
         .then(response => {
             if (response.ok) {
-                window.location.href = "./Pages/Thankyou.html"; 
+                window.location.href = "../Thankyou.html"; 
             } else {
                 alert("Something went wrong");
                 submitBtn.innerHTML = "Send Message";
