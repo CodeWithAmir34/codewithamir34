@@ -225,7 +225,7 @@ if(contactForm) {
         })
         .then(response => {
             if (response.ok) {
-                window.location.href = "./Thankyou.html"; 
+                window.location.href = "./pages/Thankyou.html"; 
             } else {
                 alert("Something went wrong");
                 submitBtn.innerHTML = "Send Message";
