@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="eng">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>CodeWithAmir | Home | Full Stack Web Developer & UI/UX Designer</title>
-    <script src="https://pl29002512.profitablecpmratenetwork.com/f2/3a/11/f23a113c475802f90e6fc551e16af2c6.js"></script>
     <meta name="google-site-verification" content="2J8DmZffIzdve6CEmCS5mkS3hK9vtjGKqrGUZhqsQJg" />
     <meta name="description"
         content="Hi, I'm Amir, a creative Full Stack Web Developer specializing in custom, animated, and high-performance websites. See my portfolio and contact me for projects.">
@@ -35,23 +34,24 @@
             </div>
             <p id="loader-status">Initializing Systems...</p>
         </div>
-    </div><nav class="navbar">
-    <div class="logo">CodeWith<span>Amir</span></div>
-
-    <div class="menu-icon" id="menuIcon" onclick="toggleMenu()">
-        <div class="bar bar1"></div>
-        <div class="bar bar2"></div>
-        <div class="bar bar3"></div>
     </div>
+    <nav class="navbar">
+        <div class="logo">CodeWith<span>Amir</span></div>
 
-    <ul class="nav-links" id="navLinks">
-        <li><a href="./index.html" class="nav-link">Home</a></li>
-        <li><a href="./pages/About.html" class="nav-link">About</a></li>
-        <li><a href="./pages/Skills.html" class="nav-link">Skills</a></li>
-        <li><a href="./pages/Projects.html" class="nav-link">Projects</a></li>
-        <li><a href="./pages/Contact.html" class="nav-link">Contact</a></li>
-    </ul>
-</nav>
+        <div class="menu-icon" id="menuIcon" onclick="toggleMenu()">
+            <div class="bar bar1"></div>
+            <div class="bar bar2"></div>
+            <div class="bar bar3"></div>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="./index.html" class="nav-link">Home</a></li>
+            <li><a href="#About" class="nav-link">About</a></li>
+            <li><a href="#Skills" class="nav-link">Skills</a></li>
+            <li><a href="#Projects" class="nav-link">Projects</a></li>
+            <li><a href="#Contact" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
     <section class="hero" id="section-hero">
         <div class="hero-content">
             <h2 class="fade-in">Hi, I am</h2>
@@ -68,17 +68,111 @@
         </div>
     </section>
 
-    <!-- ADD -->
-    <p style="font-size: 10px; color: #666; margin-left: 200px; ">Advertisement</p>
-    <div id="container-d165a28beb6c2dc081f9f7d6a922f3e0"
-        style="display: flex; margin: auto; justify-content: center; align-items: center; width: 70%;"></div>
-    <!-- ADD -->
+    <section id="About" class="About-section">
 
+        <div class="about-card">
+            <h2 class="section-title">About <span>Me</span></h2>
+            <div class="About-content">
+                <p>
+                    I am a 10th-grade student and a passionate <strong>Full-Stack Developer</strong> from Pakistan.
+                    My journey in tech is inspired by my late grandfather, a master mechanic, from whom I learned the
+                    value
+                    of precision and hard work.
+                </p>
+
+            </div>
+
+            <div class="about-stats">
+                <div class="stat">
+                    <h3>2+</h3>
+                    <p>Years Codding</p>
+                </div>
+
+                <div class="stat">
+                    <h3>5+</h3>
+                    <p>Projects</p>
+                </div>
+
+                <div class="stat">
+                    <h3>30+</h3>
+                    <p>Subscribers</p>
+                </div>
+            </div>
+    </section>
+    <section id="Projects" class="Projects-section">
+        <h2 class="section-title">My <span>Work</span></h2>
+
+        <div class="project-scroll-container">
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Digital Clock</h3>
+                    <p>Real-time JS Clock with dark theme</p>
+                    <div class="skills-tag"><span>HTML5</span> <span>CSS3</span> <span>JS</span></div>
+                </div>
+                <div class="project-card">
+                    <h3>calculator</h3>
+                    <p>Glassmorphism functional calculator.</p>
+                    <div class="skills-tag"><span>HTML5</span> <span>CSS3</span> <span>JS</span></div>
+                </div>
+                <div class="project-card">
+                    <h3>Graphic Design</h3>
+                    <p>5-Star rated Freelancer contests.</p>
+                    <div class="skills-tag"> <span>AI</span> <span>PS</span></div>
+                </div>
+                <div class="project-card">
+                    <h3>Best Page Onload</h3>
+                    <p>Start Rocket and load the website</p>
+                    <div class="skills-tag"><span> HTML5 </span> <span> CSS3 </span> <span> JS </span></div>
+                </div>
+                <div class="project-card">
+                    <h3>Portfolio Website</h3>
+                    <p>Animated Portfolio Web App</p>
+                    <div class="skills-tag"> <span>HTML5</span> <span>CSS3</span> <span>JS</span></div>
+                </div>ٖ
+            </div>
+        </div>
+
+        <div class="project-footer">
+            <a href="#Contact" class="btn contact-btn">Contect Me</a>
+        </div>
+    </section>
+
+
+
+<section id="Contact" class="contact-section">
+        <div class="contact-card">
+            <h2 class="section-title">Get in <span>Touch</span></h2>
+            <form action="https://formsubmit.co/amirraza6596695@gmail.com" method="POST" id="my-contact-form"
+                class="contact-form">
+                <div class="input-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="hidden" name="_captcha" value="false">
+                </div>
+
+                <input type="text" name="subject" placeholder="Subject" class="subject-input">
+                <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+
+                <button type="submit" class="btn send-btn" id="submit-btn">Send Message</button>
+            </form>
+
+            <div class="social-links">
+                <p>Or Find me on:</p>
+                <div class="links">
+                    <a href="https://www.instagram.com/amirraza3946/" target="_blank">instagram</a>
+                    <a href="https://github.com/amirraza6596695-byte?tab=repositories" target="_blank">GitHub</a>
+                    <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank">Email</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
 
 
     <footer class="footer">
         <div class="footer-content">
             <p>&copy; 2026 <span>CodeWithAmir</span> | All Right Reserved</p>
+
 
             <div class="footer-social">
                 <a href="https://www.instagram.com/amirraza3946/" target="_blank">Instagram</a>
@@ -88,10 +182,6 @@
         </div>
     </footer>
     <script src="./JS/script.js"></script>
-
-    <script async="async" data-cfasync="false"
-        src="https://pl29002477.profitablecpmratenetwork.com/d165a28beb6c2dc081f9f7d6a922f3e0/invoke.js"></script>
-<script src="https://pl29002456.profitablecpmratenetwork.com/41/98/fd/4198fdb87adb7b28cf86783608702ba9.js"></script>
 </body>
 
 </html>

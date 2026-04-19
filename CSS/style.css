@@ -665,11 +665,91 @@ section {
 }
 
 
+/* Blogs */
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 20px;
+}
+
+.blog-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s ease;
+    text-align: center;
+
+}
+
+.blog-card:hover {
+    background: #8A2BE2 !important;
+    color: white;
+    box-shadow: 0 0 20px #8A2BE2;
+    transform: translateY(-3px);
+}
+
+.blog-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.blog-img img {
+    margin-top: 20px;                                                                                                                                           
+    color: white;   
+    width: 100px;
+    height: auto;   
+}
+
+.blog-date {
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.blog-content p {
+    font-size: 0.89rem;
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Read More Button */
+
+.read-more {
+    display: inline-block;
+    padding: 10px 10px;
+    margin-bottom: 20px;
+    background: #007bff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 0.9rem;
+    color: white;
+    transition: 0.3s ease;
+}
+
+.read-more:hover {
+    background: #0056b3;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+    transform: translatex(-5px);
+}
 
 /* All website Responsiv */
 
 /* ============================================================
-   COMBINED RESPONSIVE LOGIC (SAB SE NICHE RAKHEIN)
+   COMBINED RESPONSIVE LOGIC (SAB S E NICHE RAKHEIN)
    ============================================================ */
 
 @media screen and (max-width: 768px) {
