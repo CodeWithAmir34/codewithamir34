@@ -747,115 +747,110 @@ section {
 }
 
 /* All website Responsiv */
-
 /* ============================================================
-   COMBINED RESPONSIVE LOGIC (SAB S E NICHE RAKHEIN)
+   RESPONSIVE OPTIMIZED CODE (Fixed for Laptop, Tab & Mini Phones)
    ============================================================ */
 
-@media screen and (max-width: 768px) {
+/* --- Default Layout Fixes (Sab devices ke liye) --- */
+section {
+    padding: 100px 5%; /* PC par 300px bohot zyada tha */
+}
 
-    /* 1. Global Section Resets */
-    .hero,
-    .About-section,
-    .Skills-section,
-    .Projects-section,
-    .contact-section {
-        width: 95% !important;
-        margin: 100px auto 30px auto !important;
-        /* Huge 270px margin fix */
-        height: auto !important;
-        min-height: auto !important;
-        padding: 40px 15px !important;
+.hero, .About-section, .Skills-section, .Projects-section {
+    height: auto !important; /* Fixed height hatani paray gi taake content adjust ho */
+    min-height: 50vh; 
+    margin: 150px auto 50px auto !important; /* 270px margin ko 150px kiya laptop ke liye */
+}
+
+/* Projects Grid Fix */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Laptop par auto adjust hoga */
+    gap: 20px;
+}
+
+/* --- Tablets & Chromebooks (max-width: 1024px) --- */
+@media screen and (max-width: 1024px) {
+    .hero, .About-section, .Skills-section, .Projects-section {
+        width: 90% !important;
+        margin: 120px auto 40px auto !important;
+        padding: 50px 30px !important;
     }
-
-    /* 2. Hero Section Mobile */
+    
     .main-name {
-        font-size: 2.2rem !important;
-        line-height: 1.2;
-        text-align: center;
+        font-size: 2.5rem !important;
     }
+}
 
-    .tagline {
-        font-size: 1rem !important;
-        text-align: center;
-        margin: 0 auto;
-    }
-
-    .hero-btn {
+/* --- Mobile & Small Devices (max-width: 768px) --- */
+@media screen and (max-width: 768px) {
+    /* Navbar Mobile Fix */
+    .nav-links {
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        width: 75%;
+        background: rgba(0, 0, 0, 0.98);
         flex-direction: column;
-        gap: 15px;
-        width: 100%;
-    }
-
-    .btn {
-        width: 100% !important;
         justify-content: center;
+        align-items: center;
+        transform: translateX(100%);
+        z-index: 100;
     }
 
-    /* 3. About & Stats Fix */
-    .about-content p {
-        line-height: 1.6 !important;
-        /* 0.8px fix */
+    .hero, .About-section, .Skills-section, .Projects-section {
+        width: 95% !important;
+        margin: 100px auto 20px auto !important;
+        padding: 40px 20px !important;
+    }
+
+    .main-name {
+        font-size: 2rem !important;
         text-align: center;
     }
 
     .about-stats {
         flex-direction: column !important;
-        gap: 20px;
-    }
-
-    .stat {
-        text-align: center;
-        background: rgba(138, 43, 226, 0.05);
-        padding: 15px;
-        border-radius: 15px;
-    }
-
-    /* 4. Skills & Projects Grid Fix */
-    .skills-container {
-        flex-direction: column !important;
-        gap: 20px;
-    }
-
-    .project-grid {
-        grid-template-columns: 1fr !important;
-        /* Mobile par 1 column */
         gap: 15px;
     }
 
-    .project-grid:nth-child(5) {
-        margin-left: 0 !important;
-        /* Alignment fix */
-    }
-
-    /* 5. Contact Form Mobile */
-    .input-group {
+    .hero-btn {
         flex-direction: column;
-        gap: 15px;
+        width: 100%;
     }
 
-    .contact-card {
-        padding: 30px 15px !important;
+    .btn {
+        width: 100%;
+        justify-content: center;
     }
 
-    /* 6. Footer Mobile */
-    .footer-content {
-        flex-direction: column !important;
-        gap: 15px;
+    .about-content p {
+        line-height: 1.6 !important; /* line-height check karni hogi */
+        text-align: center;
     }
 }
 
-/* --- Extra Small Devices (320px - 400px) --- */
-@media screen and (max-width: 400px) {
+/* --- iPhone Mini & Small Phones (max-width: 375px) --- */
+@media screen and (max-width: 375px) {
     .main-name {
-        font-size: 1.8rem !important;
+        font-size: 1.7rem !important;
     }
 
     .section-title {
-        font-size: 1.8rem !important;
+        font-size: 1.6rem !important;
     }
 
     .logo {
-        font-size: 20px !important;
+        font-size: 18px !important;
+    }
+
+    .hero, .About-section, .Skills-section, .Projects-section {
+        padding: 30px 15px !important;
+    }
+
+    .skills-tags span {
+        padding: 6px 12px;
+        font-size: 0.8rem;
     }
 }
