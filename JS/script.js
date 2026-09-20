@@ -136,7 +136,7 @@ function startRainEffect() {
 
     function drawRain() {
         rCtx.clearRect(0, 0, rCanvas.width, rCanvas.height);
-        rCtx.strokeStyle = 'rgb(255, 255, 255)'; 
+        rCtx.strokeStyle = '#db7704'; 
         rCtx.lineWidth = 1;
         rCtx.beginPath();
         for (let i = 0; i < drops.length; i++) {

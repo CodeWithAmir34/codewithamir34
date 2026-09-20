@@ -46,7 +46,7 @@ body {
 }
 
 .loader-logo span {
-    color: #8A2BE2;
+    color: #db7704;
 }
 
 .progress-container {
@@ -61,15 +61,15 @@ body {
 .progress-bar {
     width: 0%;
     height: 100%;
-    background: #8A2BE2;
-    box-shadow: 0 0 15px #8A2BE2;
+    background: #db7704;
+    box-shadow: 0 0 15px #db7704;
     transition: width 0.4s ease;
 }
 
 #loader-status {
     margin-top: 15px;
     font-size: 0.7rem;
-    color: #8A2BE2;
+    color: #db7704;
     text-transform: uppercase;
     letter-spacing: 2px;
     opacity: 0.8;
@@ -123,7 +123,7 @@ body {
 }
 
 .logo span {
-    color: #8A2BE2;
+    color: #db7704;
 }
 
 .nav-links {
@@ -141,7 +141,7 @@ body {
 }
 
 .nav-links a:hover {
-    color: #8A2BE2;
+    color: #db7704;
 }
 
 /* Hamburger Menu Icon */
@@ -259,7 +259,7 @@ body {
     background: rgba(131, 127, 127, 0.062);
     backdrop-filter: blur(5px);
     border: 2px solid rgba(46, 44, 44, 0.062);
-    box-shadow: 0px 1px 60px #8A2BE2;
+    box-shadow: 0px 1px 60px #db7704;
     border-radius: 30px;
     padding: 70px;
 
@@ -274,7 +274,7 @@ body {
 }
 
 .main-name span {
-    color: #8A2BE2;
+    color: #db7704;
 }
 
 
@@ -291,7 +291,7 @@ body {
 
 .tagline span {
     display: block;
-    color: #8A2BE2;
+    color: #db7704;
     font-weight: 500;
 }
 
@@ -311,16 +311,16 @@ body {
 }
 
 .typing {
-    color: #8A2BE2;
-    /* Purple text for dynamic roles */
+    color: #db7704;
+    /* Orange text for dynamic roles */
     font-weight: 700;
 }
 
 .cursor {
     display: inline-block;
     width: 3px;
-    background-color: #8A2BE2;
-    /* Purple blinking cursor */
+    background-color: #db7704;
+    /* Orange blinking cursor */
     margin-left: 2px;
     animation: blink 0.7s infinite;
 }
@@ -349,13 +349,14 @@ body {
     background: transparent;
     backdrop-filter: blur(10px);
     letter-spacing: 0.5px;
+    color:#db7704;  
 }
 
 .btn:hover {
-    background: #8A2BE2;
-    color: white;
+    background: #db7704;
+    color: #db7704;
     transform: translateY(-7px);
-    box-shadow: 0 3px 4px #8A2BE2;
+    box-shadow: 0 3px 4px #db7704;
 }
 
 section {
@@ -371,7 +372,7 @@ section {
     background: rgba(131, 127, 127, 0.062);
     backdrop-filter: blur(5px);
     border: 2px solid rgba(46, 44, 44, 0.062);
-    box-shadow: 0px 1px 60px #8A2BE2;
+    box-shadow: 0px 1px 60px #db7704;
     border-radius: 30px;
     padding: 70px;
 }
@@ -383,7 +384,7 @@ section {
 }
 
 .section-title span {
-    color: #8A2BE2;
+    color: #db7704;
 }
 
 .about-content p {
@@ -403,7 +404,7 @@ section {
 }
 
 .stat h3 {
-    color: #8A2BE2;
+    color: #db7704;
     font-size: 1.8rem;
     margin-bottom: 5px;
 }
@@ -421,7 +422,7 @@ section {
     background: rgba(131, 127, 127, 0.062);
     backdrop-filter: blur(5px);
     border: 2px solid rgba(46, 44, 44, 0.062);
-    box-shadow: 0px 1px 60px #8A2BE2;
+    box-shadow: 0px 1px 60px #db7704;
     border-radius: 30px;
     padding: 100px;
     text-align: center;
@@ -441,7 +442,7 @@ section {
 }
 
 .skills-group h3 {
-    color: #8A2BE2;
+    color: #db7704;
     font-size: 1.2rem;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -466,8 +467,8 @@ section {
 }
 
 .skills-tags span:hover {
-    background-color: #8A2BE2;
-    box-shadow: 0 0 15px #8A2BE2;
+    background-color: #db7704;
+    box-shadow: 0 0 15px #db7704;
     transform: translateY(-3px);
 }
 
@@ -482,7 +483,7 @@ section {
     background: rgba(131, 127, 127, 0.062);
     backdrop-filter: blur(5px);
     border: 2px solid rgba(46, 44, 44, 0.062);
-    box-shadow: 0px 1px 60px #8A2BE2;
+    box-shadow: 0px 1px 60px #db7704;
     border-radius: 30px;
     padding: 70px;
     overflow-y: auto;
@@ -512,8 +513,8 @@ section {
 }
 
 .project-card:hover {
-    background: #8A2BE2 !important;
-    box-shadow: 0 0 20px #8A2BE2;
+    background: #db7704 !important;
+    box-shadow: 0 0 20px #db7704;
     border: none;
     color: white;
     transform: translateY(-3px);
@@ -524,8 +525,8 @@ section {
 }
 
 .contact-btn {
-    background-color: #8A2BE2 !important;
-    box-shadow: 0 0 20px #8A2BE2;
+    background-color: #db7704 !important;
+    box-shadow: 0 0 20px #db7704;
     border: none;
     color: white;
     text-align: center;
@@ -581,12 +582,12 @@ section {
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-    border-color: #8A2BE2;
-    background: rgba(138, 43, 226, 0.2);
+    border-color: #db7704;
+    background: rgba(219, 119, 4, 0.2);
 }
 
 .send-btn {
-    background: #8A2BE2 !important;
+    background: #db7704 !important;
     margin: 10px auto 0;
     border: none;
     padding: 10px 30px !important;
@@ -614,7 +615,7 @@ section {
 }
 
 .links a:hover {
-    color: #8A2BE2;
+    color: #db7704;
 }
 
 
@@ -643,7 +644,7 @@ section {
 }
 
 .footer-content p span {
-    color: #8A2BE2;
+    color: #db7704;
     font-weight: 600;
 }
 
@@ -661,7 +662,7 @@ section {
 }
 
 .footer-social a:hover {
-    color: #8A2BE2;
+    color: #db7704;
     opacity: 1;
 }
 
