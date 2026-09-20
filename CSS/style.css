@@ -590,6 +590,7 @@ section {
     background: #db7704 !important;
     margin: 10px auto 0;
     border: none;
+    color: white;
     padding: 10px 30px !important;
     font-size: 0.9rem !important;
 }
