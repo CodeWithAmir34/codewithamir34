@@ -224,3 +224,17 @@ function startRainEffect() {
     }
     renderRain();
 }
+
+// Form ko select karein
+const contactForm = document.querySelector('form'); // Agar id hai toh document.getElementById('your-form-id') use karein
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault(); // Default form submit hone se rokein
+
+        // Agar aap koi API / Formspree etc. use kar rahe hain toh pehle message send ka logic yahan aayega,
+        // phir redirection hoga:
+        
+        window.location.href = './pages/Thankyou.html'; // Apne thank you page ka sahi path daalein
+    });
+}
