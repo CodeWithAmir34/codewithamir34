@@ -1,3 +1,4 @@
+// --- 1. SMOKE CANVAS ANIMATION ---
 const canvas = document.getElementById('smokeCanvas');
 const ctx = canvas.getContext('2d');
 
@@ -5,48 +6,47 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 let particlesArray = [];
-let hue = 260; 
-let smokeActive = true; 
+let hue = 190;
+let smokeActive = true;
 
 const mouse = { x: undefined, y: undefined };
 
-// --- SMOKE GENERATION ---
 window.addEventListener('mousemove', (event) => {
     if (smokeActive) {
         mouse.x = event.x;
         mouse.y = event.y;
-        for (let i = 0; i < 8; i++) {
+        for (let i = 0; i < 5; i++) {
             particlesArray.push(new Particle());
         }
     }
-});
+}, { passive: true });
 
 class Particle {
     constructor() {
         this.x = mouse.x;
         this.y = mouse.y;
-        this.size = Math.random() * 25 + 10; 
+        this.size = Math.random() * 20 + 8;
         this.speedX = Math.random() * 2 - 1;
         this.speedY = Math.random() * 2 - 1;
         this.color = `hsl(${hue}, 100%, 50%)`;
-        this.opacity = 1;
+        this.opacity = 0.8;
     }
     update() {
         this.x += this.speedX;
         this.y += this.speedY;
         if (this.size > 0.1) this.size -= 0.1;
-        if (this.opacity > 0) this.opacity -= 0.007; 
+        if (this.opacity > 0) this.opacity -= 0.008;
     }
     draw() {
         ctx.fillStyle = this.color;
-        ctx.globalAlpha = this.opacity;
+        ctx.globalAlpha = Math.max(this.opacity, 0);
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
     }
 }
 
-function animate() {
+function animateSmoke() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     for (let i = 0; i < particlesArray.length; i++) {
         particlesArray[i].update();
@@ -56,186 +56,171 @@ function animate() {
             i--;
         }
     }
-    hue += 1;
-    requestAnimationFrame(animate);
+    hue += 0.5;
+    if (hue > 200) hue = 180;
+    requestAnimationFrame(animateSmoke);
 }
-animate();
+animateSmoke();
 
-// --- HAMBURGER MENU FUNCTION ---
+// --- 2. HAMBURGER MENU ---
 const hamburger = document.querySelector('.menu-icon');
 const navLinks = document.querySelector('.nav-links');
-const allNavLinks = document.querySelectorAll('.nav-links li');
+const allNavLinks = document.querySelectorAll('.nav-links li a');
 
-if(hamburger) {
+if (hamburger) {
     hamburger.addEventListener('click', () => {
-        // Menu open/close toggle
+        const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+        hamburger.setAttribute('aria-expanded', !isExpanded);
         navLinks.classList.toggle('active');
-        // Hamburger animation (agar CSS mein 'toggle' class banayi hai)
         hamburger.classList.toggle('toggle');
     });
 }
 
-// Links par click hote hi menu band ho jaye
 allNavLinks.forEach(link => {
     link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        hamburger.classList.remove('toggle');
+        if (navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            hamburger.classList.remove('toggle');
+            hamburger.setAttribute('aria-expanded', 'false');
+        }
     });
 });
 
-// --- PRELOADER & RAIN LOGIC ---
+// --- 3. AUTOMATIC PRELOADER HANDLER ---
 window.addEventListener('load', () => {
-    const progress = document.getElementById('progress');
+    const progressRing = document.getElementById('progressRing');
     const status = document.getElementById('loader-status');
     const preloader = document.getElementById('preloader');
-    
+    const percentText = document.getElementById('percentText');
+
     let width = 0;
     const messages = ["Loading Assets...", "Setting Up UI...", "Injecting Scripts...", "Ready!"];
     let msgIndex = 0;
 
+    let circumference = 251.2;
+    if (progressRing) {
+        progressRing.style.strokeDasharray = `${circumference}`;
+        progressRing.style.strokeDashoffset = `${circumference}`;
+    }
+
     const preloaderInterval = setInterval(() => {
         if (width >= 100) {
             clearInterval(preloaderInterval);
-            status.innerText = "Welcome";
+            if (status) status.innerText = "READY!";
+            if (percentText) percentText.innerText = "100%";
+            if (progressRing) progressRing.style.strokeDashoffset = `0`;
+
+            // Auto transition to site
             setTimeout(() => {
-                preloader.style.transform = "translateY(-100%)"; 
+                preloader.style.transform = "translateY(-100%)";
                 setTimeout(() => {
                     preloader.style.display = 'none';
-                    startRainEffect(); 
-                }, 1000);
+                    startRainEffect();
+                    initTypewriterEffect(); // Preloader hitne ke baad typewriter start hoga
+                }, 800);
             }, 500);
+
         } else {
-            width += Math.random() * 15; 
+            width += Math.random() * 15;
             if (width > 100) width = 100;
-            progress.style.width = width + '%';
-            if (width > (msgIndex + 1) * 25) {
-                status.innerText = messages[msgIndex];
+            const MathFloorWidth = Math.floor(width);
+            
+            if (percentText) percentText.innerText = MathFloorWidth + '%';
+            if (progressRing) {
+                const offset = circumference - (MathFloorWidth / 100) * circumference;
+                progressRing.style.strokeDashoffset = offset;
+            }
+
+            if (width > (msgIndex + 1) * 25 && msgIndex < messages.length) {
+                if (status) status.innerText = messages[msgIndex];
                 msgIndex++;
             }
         }
-    }, 100);
+    }, 80);
 });
 
+// --- 4. IMPROVED TYPEWRITER ANIMATION ---
+function initTypewriterEffect() {
+    const typingElement = document.getElementById('typing-text');
+    if (!typingElement) return;
+
+    const words = ["Full Stack Developer", "UI/UX Designer", "Web Architect", "Freelancer"];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typingSpeed = 100;
+
+    function type() {
+        const currentWord = words[wordIndex];
+
+        if (isDeleting) {
+            typingElement.textContent = currentWord.substring(0, charIndex - 1);
+            charIndex--;
+            typingSpeed = 50;
+        } else {
+            typingElement.textContent = currentWord.substring(0, charIndex + 1);
+            charIndex++;
+            typingSpeed = 100;
+        }
+
+        if (!isDeleting && charIndex === currentWord.length) {
+            typingSpeed = 2000; // Poora word type hone ke baad pause
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+            typingSpeed = 500; // Agla word start hone se pehle pause
+        }
+
+        setTimeout(type, typingSpeed);
+    }
+
+    type();
+}
+
+// --- 5. RAIN CANVAS ANIMATION ---
 function startRainEffect() {
     const rCanvas = document.getElementById('rainCanvas');
+    if (!rCanvas) return;
+    
     rCanvas.style.display = 'block';
     const rCtx = rCanvas.getContext('2d');
     rCanvas.width = window.innerWidth;
     rCanvas.height = window.innerHeight;
 
     const drops = [];
-    for (let i = 0; i < 500; i++) {
+    const dropCount = Math.min(Math.floor(window.innerWidth / 3), 400);
+
+    for (let i = 0; i < dropCount; i++) {
         drops.push({
             x: Math.random() * rCanvas.width,
             y: Math.random() * rCanvas.height,
-            velY: Math.random() * 5 + 5,
-            velX: Math.random() * 1 - 0.5,
-            size: Math.random() * 2 + 1
+            velY: Math.random() * 4 + 6,
+            velX: Math.random() * 0.6 - 0.3
         });
     }
 
-    function drawRain() {
+    function renderRain() {
         rCtx.clearRect(0, 0, rCanvas.width, rCanvas.height);
-        rCtx.strokeStyle = '#db7704'; 
+        rCtx.strokeStyle = 'rgba(0, 212, 255, 0.4)';
         rCtx.lineWidth = 1;
         rCtx.beginPath();
+
         for (let i = 0; i < drops.length; i++) {
             const d = drops[i];
             rCtx.moveTo(d.x, d.y);
-            rCtx.lineTo(d.x + d.velX, d.y + d.velY);
-        }
-        rCtx.stroke();
-        updateRain();
-    }
+            rCtx.lineTo(d.x + d.velX, d.y + d.velY * 2);
 
-    function updateRain() {
-        for (let i = 0; i < drops.length; i++) {
-            const d = drops[i];
-            d.y += d.velY;
             d.x += d.velX;
+            d.y += d.velY;
+
             if (d.y > rCanvas.height) {
-                d.y = -20;
+                d.y = -10;
                 d.x = Math.random() * rCanvas.width;
             }
         }
+        rCtx.stroke();
+        requestAnimationFrame(renderRain);
     }
-    setInterval(drawRain, 30);
-}
-
-window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    const rCanvas = document.getElementById('rainCanvas');
-    if (rCanvas) {
-        rCanvas.width = window.innerWidth;
-        rCanvas.height = window.innerHeight;
-    }
-});
-
-// --- TYPEWRITER ---
-const roles = ["Web App Developer", "UI/UX Designer", "Freelancer", "Graphic Designer"];
-let roleIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-let typeSpeed = 100;
-const typingText = document.getElementById('typing-text');
-
-function type() {
-    const currentRole = roles[roleIndex];
-    if (isDeleting) {
-        typingText.textContent = currentRole.substring(0, charIndex - 1);
-        charIndex--;
-        typeSpeed = 50;
-    } else {
-        typingText.textContent = currentRole.substring(0, charIndex + 1);
-        charIndex++;
-        typeSpeed = 100;
-    }
-
-    if (!isDeleting && charIndex === currentRole.length) {
-        isDeleting = true;
-        typeSpeed = 2000; 
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        roleIndex = (roleIndex + 1) % roles.length;
-        typeSpeed = 500;
-    }
-    setTimeout(type, typeSpeed);
-}
-
-window.addEventListener('load', () => {
-    setTimeout(type, 3000); 
-});
-
-// --- CONTACT FORM ---
-const contactForm = document.getElementById('my-contact-form');
-const submitBtn = document.getElementById('submit-btn');
-
-if(contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        submitBtn.innerHTML = "Sending... 🚀";
-        submitBtn.disabled = true;
-        const formData = new FormData(this);
-
-        fetch(this.action, {
-            method: 'POST',
-            body: formData,
-            headers: { 'Accept': 'application/json' }
-        })
-        .then(response => {
-            if (response.ok) {
-                window.location.href = "./pages/Thankyou.html"; 
-            } else {
-                alert("Something went wrong");
-                submitBtn.innerHTML = "Send Message";
-                submitBtn.disabled = false;
-            }
-        })
-        .catch(error => {
-            alert("Internet check");
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = "Send Message";
-        });
-    });
+    renderRain();
 }
